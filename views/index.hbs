@@ -11,9 +11,9 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" type="text/css" href="stylesheets/index.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"> 
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"> 
+<link rel="stylesheet" href="http://localhost:3000/stylesheets/index.css"/>  
 
 	  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
    <!--humburger icon & sidebar script-->
@@ -244,13 +244,14 @@
 
 
  </li>
-<li class="bo"><a href="/"><img src="images/favicon.ico"/></a></li>
+<li class="bo"><a href="/"><img src="../images/favicon.ico"/></a></li>
 <li class="bo"><span><i class="fas fa-shopping-basket fa-2x"></i></span></li>
 </ul>
 </div>
 <div id="line"></div>
 </header>
- <div class="sidebar">
+<!--sidebar-->
+ <div class="sidebar" class="grid">
  
  <ul class="newIn">
  <li>New In</li>
@@ -565,7 +566,7 @@
  <ul>
  <li>
  <div class="card">
- <a href="#"><img src="images/img1.jpg" alt=""></a>
+ <a href="#"><img src="../images/img1.jpg" alt=""></a>
  <div class="card-content">
  <h3 class="card-title">Unstitched</h3>
  <a href="#" class="btn">Shop Now</a>
@@ -574,7 +575,7 @@
  </li>
   <li>
  <div class="card">
- <a href="#"><img src="images/img2.jpg" alt=""></a>
+ <a href="#"><img src="../images/img2.jpg" alt=""></a>
  <div class="card-content">
  <h3 class="card-title">READY. SET. PRET.</h3>
  <a href="#" class="btn">Shop Now</a>
@@ -583,7 +584,7 @@
  </li>
   <li>
  <div class="card">
- <a href="#"><img src="images/img3.jpg" alt=""></a>
+ <a href="#"><img src="../images/img3.jpg" alt=""></a>
  <div class="card-content">
  <h3 class="card-title">Kids</h3>
  <a href="#" class="btn">Shop Now</a>
@@ -592,20 +593,21 @@
  </li>
    <li>
  <div class="card">
- <a href="#"><img src="images/img4.jpg" alt=""></a>
+ <a href="#"><img src="../images/img4.jpg" alt=""></a>
  <div class="card-content">
  <h3 class="card-title">Man</h3>
  <a href="#" class="btn">Shop Now</a>
  </div>
- </div>
+ </div 
  </li>
  </ul>
  </section>
 <div class="logo">
- <a href="/"><img src="images/favicon.ico"/></a>
+ <a href="/"><img src="../images/favicon.ico"/></a>
  </div>
+ 
 <!--Footer-->
-<footer id="main-footer">
+<footer id="main-footer" class="grid">
 <ul class="company">
 <li>COMPNAY</li>
 <li><div class="company-icon">
@@ -619,9 +621,9 @@
 <div id="line"></div>
 
  <ul class="comp">
- <li><a href="http://#" target="_blank">About us </a></li>
- <li><a href="http://#" target="_blank">Careers at Classic</a></li>
- <li><a href="http://#" target="_blank">Contact us</a></li>
+ <li><a href="http://localhost:3000/catalog/about">About us </a></li>
+ <li><a href="http://localhost:3000/catalog/career">Careers at Classic</a></li>
+ <li><a href="http://localhost:3000/catalog/contact">Contact us</a></li>
 </ul> 
 
 
@@ -637,6 +639,7 @@
 <div id="line"></div>
 
 <ul class="cust">
+<li><a href="http://localhost:3000/catalog/customer">Customer Service </a></li>
 <li><a href="http://#" target="_blank">Store Locator </a></li>
 <li><a href="http://#" target="_blank">Shipping & Handling</a></li>
 <li><a href="http://#" target="_blank">Return & Exchange</a></li>
@@ -664,18 +667,20 @@
 
 
 </footer>
-<div class="sign">
+<!--newsletter-->
+<div class="sign" class="grid">
 <p class="news">SIGN UP FOR OUR NEWSLETTER:</p>
 <form action="/#">
 
 <ul class="sin">
-<li class="si"><input type="text" name="signup" placeholder="Enter your email address: "/></li>
+<li class="si"><input type="text" name="signup" placeholder="Enter your email address:"/></li>
 <li class="si"><input type="submit" id="s" value="Sign Up"/></li>
 </ul>
 <hr>
 </form>
 </div>
-<div class="adver">
+<!--advertisement-->
+<div class="adver" class="grid">
 <ul class="adv">
     <li><a href="#"><i class="fab fa-facebook fa-2x"></i></a></li>
 	<li><a href="#"><i class="fab fa-twitter-square fa-2x"></i></a></li>
@@ -685,7 +690,8 @@
 
 </ul>
 </div>
-<div class="copy">
+<!--copyright-->
+<div class="copy" class="grid">
 <p>Copyright &copy 2018 Classic Fabrics.All Rights reserved.</p>
 </div>
 

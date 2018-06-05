@@ -7,6 +7,19 @@ var man_controller = require('../controllers/manController');
 var ready_controller = require('../controllers/readyController');
 var unstitched_controller = require('../controllers/unstitchedController');
 
+//compnay  about page
+var about_controller = require('../controllers/aboutController');
+router.get('/about', about_controller.about_page);
+// company contact page
+var contact_controller = require('../controllers/contactController');
+router.get('/contact', contact_controller.contact_page);
+//company careers page
+var career_controller = require('../controllers/careerController');
+router.get('/career', career_controller.career_page);
+//customer support page customer services
+var customer_controller = require('../controllers/customerController');
+router.get('/customer', customer_controller.customer_page);
+
 /// unstitched ROUTES ///
 // GET catalog home page.
 router.get('/',unstitched_controller.index);
