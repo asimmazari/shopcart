@@ -6,8 +6,11 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 var favicon = require('serve-favicon');
 var indexRouter = require('./routes/index');
-var users = require('./routes/users');
-var catalog = require('./routes/catalog');
+var woman = require('./routes/woman');
+var man = require('./routes/man');
+var kids = require('./routes/kids');
+var accessories = require('./routes/accessories');
+var home = require('./routes/home');
 
 var app = express();
 
@@ -26,8 +29,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', indexRouter);
-app.use('/users',users);
-app.use('/catalog',catalog);
+app.use('/woman',woman);
+app.use('/man',man);
+app.use('/kids',kids);
+app.use('/accessories',accessories);
+app.use('/home',home);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

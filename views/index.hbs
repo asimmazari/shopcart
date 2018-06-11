@@ -61,7 +61,7 @@
 	 $(document).ready(function(){
 	 $('.newIn li').click(function(){
 	    $('.new').toggleClass('active');
-		 $('.new-icon').toggleClass('active');
+		 $('.newIn-icon').toggleClass('active');
 	 });
 	 });
    </script>
@@ -219,6 +219,41 @@
 	 });
    </script>
    
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.unstitched li').click(function(){
+	    $('.unsti').toggleClass('active');
+		 $('.unstitched-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.pret li').click(function(){
+	    $('.pre').toggleClass('active');
+		 $('.pret-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.khaas li').click(function(){
+	    $('.khaa').toggleClass('active');
+		 $('.khaas-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.bott2 li').click(function(){
+	    $('.bot2').toggleClass('active');
+		 $('.bott2-icon').toggleClass('active');
+	 });
+	 });
+   </script>
    
 </head>
 <body>
@@ -248,14 +283,14 @@
 <li class="bo"><span><i class="fas fa-shopping-basket fa-2x"></i></span></li>
 </ul>
 </div>
-<div id="line"></div>
+
 </header>
 <!--sidebar-->
  <div class="sidebar" class="grid">
  
  <ul class="newIn">
  <li>New In</li>
- <li><div class="new-icon">
+ <li><div class="newIn-icon">
  <span></span>
  <span></span>
  <span></span>
@@ -272,7 +307,7 @@
  <span></span>
  <span></span>
  </div></li>
-</ul><hr/>
+</ul>
 </li>
 <ul class="wom">
 <li><a href="http://#" target="_blank">Unstitched </a></li>
@@ -289,7 +324,7 @@
  <span></span>
  <span></span>
  </div></li>
- </ul><hr/>
+ </ul>
  </li>
  <ul class="ma">
 <li><a href="http://#" target="_blank">Kurta</a></li>
@@ -305,7 +340,7 @@
  <span></span>
  <span></span>
  </div></li>
-</ul><hr/>
+</ul>
 </li>
  <ul class="kid">
 <li><a href="http://#" target="_blank">Boys</a></li>
@@ -320,7 +355,7 @@
  <span></span>
  <span></span>
  </div></li>
- </ul><hr/>
+ </ul><hr>
  </li>
  <ul class="acce">
 <li><a href="http://#" target="_blank">Woman</a></li>
@@ -341,10 +376,74 @@
  </ul>
  <hr/>
  <ul class="wom2">
-<li><a href="http://#" target="_blank">Unstitched </a></li>
-<li><a href="http://#" target="_blank">Pret</a></li>
-<li><a href="http://#" target="_blank">Khaas</a></li>
-<li><a href="http://#" target="_blank">Bottoms</a></li>
+<li><ul class="unstitched">
+ <li>Unstitched</li>
+ <li><div class="unstitched-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div>
+ </li>
+ </ul>
+ 
+ <ul class="unsti">
+<li><a href="http://localhost:3000/woman/twopc_summer_vibes">2PC-SUMMER VIBES</a></li>
+<li><a href="http://localhost:3000/woman/luxury_collection">LUXURY COLLECTION</a></li>
+<li><a href="http://localhost:3000/woman/lawn_vol_1">LAWN VOL.1</a></li>
+<li><a href="http://localhost:3000/woman/lawn_vol_2">LAWN VOL.2</a></li>
+</ul></li>
+
+
+<li><ul class="pret">
+ <li>PRET</li>
+ <li><div class="pret-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div>
+ </li>
+ </ul>
+ 
+ <ul class="pre">
+<li><a href="http://localhost:3000/woman/kurta">KURTA</a></li>
+
+</ul></li>
+
+<li><ul class="khaas">
+ <li>KHAAS</li>
+ <li><div class="khaas-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div>
+ </li>
+ </ul>
+ 
+ <ul class="khaa">
+<li><a href="http://localhost:3000/woman/semi_formals">SEMI FORMALS</a></li>
+<li><a href="http://localhost:3000/woman/casual">CASUAL</a></li>
+
+</ul></li>
+
+<li><ul class="bott2">
+ <li>BOTTOM</li>
+ <li><div class="bott2-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div>
+ </li>
+ </ul>
+ 
+ <ul class="bot2">
+<li><a href="http://localhost:3000/woman/formal_pants">FORMAL PANTS</a></
+<li><a href="http://localhost:3000/woman/pants">PANTS</a></li>
+<li><a href="http://localhost:3000/woman/shalwar">SHALWAR</a></li>
+<li><a href="http://localhost:3000/woman/denim">DENIM</a></li>
+<li><a href="http://localhost:3000/woman/tights">TIGHTS</a></li>
+
+</ul></li>
+
 </ul>
 
 <ul class="man2">
@@ -364,14 +463,14 @@
  <span></span>
  <span></span>
  </div></li>
- </ul><hr/>
+ </ul>
  </li>
  
  <ul class="kurt">
-<li><a href="http://#" target="_blank">Basic Kurta </a></li>
-<li><a href="http://#" target="_blank">Kurta Shalwar</a></li>
-<li><a href="http://#" target="_blank">Shalwar Kameez</a></li>
-<li><a href="http://#" target="_blank">Short Kurta</a></li>
+<li><a href="http://localhost:3000/man/basicKurta">Basic Kurta </a></li>
+<li><a href="http://localhost:3000/man/kurtaShalwar">Kurta Shalwar</a></li>
+<li><a href="http://localhost:3000/man/shalwarKameez">Shalwar Kameez</a></li>
+<li><a href="http://localhost:3000/man/shortKurta">Short Kurta</a></li>
 </ul>
 
 <li><ul class="bottomss">
@@ -381,12 +480,12 @@
  <span></span>
  <span></span>
  </div></li>
- </ul><hr/>
+ </ul>
  </li>
  
  <ul class="bott">
-<li><a href="http://#" target="_blank">Pajama </a></li>
-<li><a href="http://#" target="_blank">Shalwar</a></li>
+<li><a href="http://localhost:3000/man/pajama">Pajama </a></li>
+<li><a href="http://localhost:3000/man/shalwar">Shalwar</a></li>
 
 </ul>
  
@@ -398,12 +497,12 @@
  <span></span>
  <span></span>
  </div></li>
- </ul><hr/>
+ </ul>
  </li>
  
   <ul class="wais">
-<li><a href="http://#" target="_blank">Embroidered</a></li>
-<li><a href="http://#" target="_blank">Classic</a></li>
+<li><a href="http://localhost:3000/man/embroidered">Embroidered</a></li>
+<li><a href="http://localhost:3000/man/classic">Classic</a></li>
 
 </ul>
 
@@ -430,10 +529,10 @@
  </ul>
  </li>
  <ul class="girl">
- <li><a href="http://#" target="_blank">Kurta </a></li>
- <li><a href="http://#" target="_blank">Kurta Pajama</a></li>
- <li><a href="http://#" target="_blank">Pants</a></li>
- <li><a href="http://#" target="_blank">Formal Suits</a></li>
+ <li><a href="http://localhost:3000/kids/kurta">Kurta </a></li>
+ <li><a href="http://localhost:3000/kids/kurtaPajama">Kurta Pajama</a></li>
+ <li><a href="http://localhost:3000/kids/pants">Pants</a></li>
+ <li><a href="http://localhost:3000/kids/formalSuits">Formal Suits</a></li>
 </ul> 
  
 
@@ -448,10 +547,10 @@
  </ul><hr/>
  </li>
  <ul class="gwes">
- <li><a href="http://#" target="_blank">Blouses</a></li>
- <li><a href="http://#" target="_blank">Dresses</a></li>
- <li><a href="http://#" target="_blank">Tights</a></li>
- <li><a href="http://#" target="_blank">Pants</a></li>
+ <li><a href="http://localhost:3000/kids/blouses">Blouses</a></li>
+ <li><a href="http://localhost:3000/kids/dresses">Dresses</a></li>
+ <li><a href="http://localhost:3000/kids/tights">Tights</a></li>
+ <li><a href="http://localhost:3000/kids/pants">Pants</a></li>
 </ul> 
  
 
@@ -466,10 +565,10 @@
  </ul><hr/>
  </li>
  <ul class="boy">
- <li><a href="http://#" target="_blank">Kurta</a></li>
- <li><a href="http://#" target="_blank">Kurta Pajama</a></li>
- <li><a href="http://#" target="_blank">WaistCoat</a></li>
- <li><a href="http://#" target="_blank">Shalwar</a></li>
+ <li><a href="http://localhost:3000/kids/kurta">Kurta</a></li>
+ <li><a href="http://localhost:3000/kids/kurtaPajama">Kurta Pajama</a></li>
+ <li><a href="http://localhost:3000/kids/waistcoat">WaistCoat</a></li>
+ <li><a href="http://localhost:3000/kids/shalwar">Shalwar</a></li>
 </ul> 
  
 <li><ul class="bwest">
@@ -482,9 +581,9 @@
  </ul><hr/>
  </li>
  <ul class="bwes">
- <li><a href="http://#" target="_blank">Denim</a></li>
- <li><a href="http://#" target="_blank">T-Shirts</a></li>
- <li><a href="http://#" target="_blank">Shirts</a></li>
+ <li><a href="http://localhost:3000/kids/denim">Denim</a></li>
+ <li><a href="http://localhost:3000/kids/tShirts">T-Shirts</a></li>
+ <li><a href="http://localhost:3000/kids/shirts">Shirts</a></li>
  
 </ul> 
 
@@ -509,17 +608,17 @@
  </div></li>
 </ul></li>
 <ul class="wom3">
-<li><a href="http://#" target="_blank">FootWear</a></li>
-<li><a href="http://#" target="_blank">Fragrance</a></li>
-<li><a href="http://#" target="_blank">Jewelry</a></li>
-<li><a href="http://#" target="_blank">HandBags</a></li>
-<li><a href="http://#" target="_blank">Clutches</a></li>
-<li><a href="http://#" target="_blank">Scarves</a></li>
-<li><a href="http://#" target="_blank">SunGlasses</a></li>
-<li><a href="http://#" target="_blank">Wallets</a></li>
-<li><a href="http://#" target="_blank">Dupatta</a></li>
-<li><a href="http://#" target="_blank">Stole</a></li>
-<li><a href="http://#" target="_blank">Tank Tops</a></li>
+<li><a href="http://localhost:3000/accessories/footwear">FootWear</a></li>
+<li><a href="http://localhost:3000/accessories/fragrance">Fragrance</a></li>
+<li><a href="http://localhost:3000/accessories/jewelry">Jewelry</a></li>
+<li><a href="http://localhost:3000/accessories/handbags">HandBags</a></li>
+<li><a href="http://localhost:3000/accessories/clutches">Clutches</a></li>
+<li><a href="http://localhost:3000/accessories/scarves">Scarves</a></li>
+<li><a href="http://localhost:3000/accessories/sunglasses">SunGlasses</a></li>
+<li><a href="http://localhost:3000/accessories/wallets">Wallets</a></li>
+<li><a href="http://localhost:3000/accessories/dupatta">Dupatta</a></li>
+<li><a href="http://localhost:3000/accessories/stole">Stole</a></li>
+<li><a href="http://localhost:3000/accessories/tankTops">Tank Tops</a></li>
 </ul>
 <li><ul class="girls">
 <li>Girls</li>
@@ -561,12 +660,88 @@
  </ul>
  </div>
 
+ 
+ <!--slider start-->
+ <div class="wrap">
+ <div id="arrow-left" class="arrow"></div>
+ <div id="slider">
+ <div class="slide slide1">
+ <div class="slide-content">
+ <span>unstitched</span>
+ </div>
+ </div>
+ 
+ <div class="slide slide2">
+ <div class="slide-content">
+ <span>ready made</span>
+ </div>
+ </div>
+ 
+ <div class="slide slide3">
+ <div class="slide-content">
+ <span>Image Three</span>
+ </div>
+ </div>
+ 
+ 
+ </div>
+<div id="arrow-right" class="arrow"></div>
+<script type="text/javascript">
+let sliderImages = document.querySelectorAll('.slide'),
+    arrowLeft = document.querySelector('#arrow-left'),
+	arrowRight = document.querySelector('#arrow-right');
+	current = 0;
+	
+	function reset(){
+	for(let i=0; i< sliderImages.length; i++){
+	 sliderImages[i].style.display = 'none';
+	}
+	}
+	// Init slider
+   function startSlide(){
+   reset();
+   sliderImages[0].style.display = 'block';
+   }
+   // show prev
+   function slideLeft(){
+   reset();
+   sliderImages[current - 1].style.display = 'block';
+   current--;
+   }
+   //show next
+   function slideRight(){
+   reset();
+   sliderImages[current + 1].style.display = 'block';
+   current++;
+   }
+   
+   //left arrow click
+   arrowLeft.addEventListener('click', function(){
+   if(current === 0){
+   current = sliderImages.length;
+   }
+   slideLeft();
+   });
+      //right arrow click
+   arrowRight.addEventListener('click', function(){
+   if(current=== sliderImages.length - 1){
+   current = -1;
+   }
+   slideRight();
+   });
+   
+	startSlide();
+	</script>
+
+ </div>
+ <!--slider end-->
+ 
  <!--section B-->
  <section id="section-b" class="grid">
  <ul>
  <li>
  <div class="card">
- <a href="#"><img src="../images/img1.jpg" alt=""></a>
+ <a href="http://localhost:3000/woman/twopc_summer_vibes"><img src="../images/img1.jpg" alt=""></a>
  <div class="card-content">
  <h3 class="card-title">Unstitched</h3>
  <a href="#" class="btn">Shop Now</a>
@@ -621,9 +796,9 @@
 <div id="line"></div>
 
  <ul class="comp">
- <li><a href="http://localhost:3000/catalog/about">About us </a></li>
- <li><a href="http://localhost:3000/catalog/career">Careers at Classic</a></li>
- <li><a href="http://localhost:3000/catalog/contact">Contact us</a></li>
+ <li><a href="http://localhost:3000/home/about">About us </a></li>
+ <li><a href="http://localhost:3000/home/career">Careers at Classic</a></li>
+ <li><a href="http://localhost:3000/home/contact">Contact us</a></li>
 </ul> 
 
 
@@ -639,11 +814,11 @@
 <div id="line"></div>
 
 <ul class="cust">
-<li><a href="http://localhost:3000/catalog/customer">Customer Service </a></li>
-<li><a href="http://#" target="_blank">Store Locator </a></li>
-<li><a href="http://#" target="_blank">Shipping & Handling</a></li>
-<li><a href="http://#" target="_blank">Return & Exchange</a></li>
-<li><a href="http://#" target="_blank">Disclaimer</a></li>
+<li><a href="http://localhost:3000/home/customer">Customer Service </a></li>
+<li><a href="http://localhost:3000/home/storelocator">Store Locator </a></li>
+<li><a href="http://localhost:3000/home/handling">Shipping & Handling</a></li>
+<li><a href="http://localhost:3000/home/exchange">Return & Exchange</a></li>
+<li><a href="http://localhost:3000/home/disclaimer">Disclaimer</a></li>
 </ul>
 
  
@@ -659,10 +834,10 @@
  <div id="line"></div>
 
  <ul class="hel">
-<li><a href="http://#" target="_blank">Track Your Order </a></li>
-<li><a href="http://#" target="_blank">Terms & Conditions</a></li>
-<li><a href="http://#" target="_blank">Privacy Policy</a></li>
-<li><a href="http://#" target="_blank">Disclaimer</a></li>
+<li><a href="http://www.tcscouriers.com/pk/Tracking/Default.aspx" target="_blank">Track Your Order </a></li>
+<li><a href="http://localhost:3000/home/term">Terms & Conditions</a></li>
+<li><a href="http://localhost:3000/home/privacy">Privacy Policy</a></li>
+
 </ul>
 
 
