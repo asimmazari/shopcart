@@ -10,12 +10,19 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
+    "express-favicon": "^2.0.1",
     "express-handlebars": "^3.0.0",
+    "express-handlebars-paginate": "^1.0.3",
+    "express-session": "^1.15.6",
+    "handlebars": "^4.0.11",
+    "handlebars-paginate": "^0.1.0",
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
     "mongoose": "^5.0.13",
     "morgan": "~1.9.0",
     "ms": "^2.1.1",
-    "serve-favicon": "^2.5.0"
+    "npm": "^6.1.0",
+    "serve-favicon": "^2.5.0",
+    "url-search-params": "^1.0.2"
   }
 }
