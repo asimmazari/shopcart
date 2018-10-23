@@ -1,0 +1,2300 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classic Official Website </title>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"> 
+<link rel="stylesheet" href="http://localhost:3000/stylesheets/index.css"/>  
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<!--page form submit-->
+
+<script type="text/javascript">
+$(document).ready(function(){
+var options = document.getElementsByName("productPerPage");
+var val = sessionStorage.getItem('productPerPage');
+
+$('select[name="productPerPage"]').click(function(){
+sessionStorage.setItem('productPerPage',$(this).val());
+
+});
+ }); 
+function productPerPageSubmit(){
+document.forms["productPerPageForm"].submit(); 
+}
+
+</script>
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+var button = document.getElementsByName("page");
+var val = sessionStorage.getItem('page');
+
+$('button[name="page"]').click(function(){
+sessionStorage.setItem('page',$(this).val());
+
+});
+
+}); 
+function pageSubmit(){
+document.forms["pageForm"].submit(); 
+}
+</script>
+
+<!--end page submit-->
+
+<!--start filter form  checked-->  
+<script type="text/javascript">
+$(document).ready(function(){
+var radios = document.getElementsByName("category");
+var val = sessionStorage.getItem('category');
+for(var i=0; i<radios.length; i++){
+if(radios[i].value == val){
+radios[i].checked=true;
+$('#nsb').show();
+$('#blockclose').show();
+switch(radios[i].value){
+case "unstitched":
+$('#category1').show();
+break;
+case "pret":
+$('#category2').show();
+break;
+case "bottoms":
+$('#category3').show();
+break;
+}
+if($("input:radio[name=category]").is(":checked")){
+  $('input:radio[name=category]').hide();
+}
+for(var j=0; j<radios.length; j++){
+if(radios[j].value !=radios[i].value){
+$('input:radio[name=category]').not(':checked').hide();
+$('input:radio[name=category]').not(':checked').siblings('label').hide();
+}
+}
+
+$('.cate').toggleClass('active');
+$('.category-icon').hide();
+}
+$('#category1').click(function(){
+sessionStorage.removeItem('category');
+ $("#categoryChoice1").prop("checked", false);
+});
+$('#category2').click(function(){
+sessionStorage.removeItem('category'); 
+$("#categoryChoice2").prop("checked", false);
+});
+$('#category3').click(function(){
+sessionStorage.removeItem('category'); 
+$("#categoryChoice3").prop("checked", false);
+});
+
+}
+$('input[name="category"]').click(function(){
+sessionStorage.setItem('category',$(this).val());
+
+});
+
+});
+function universalSubmit(){
+document.forms["xyzForm"].submit(); 
+}
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+var radios = document.getElementsByName("piece");
+var val = sessionStorage.getItem('piece');
+for(var i=0; i<radios.length; i++){
+if(radios[i].value == val){
+radios[i].checked=true;
+$('#nsb').show();
+$('#blockPiece').show();
+switch(radios[i].value){
+case '1':
+$('#piece1').show();
+$('#piece1').insertBefore('#blockCategory');
+break;
+case '2':
+$('#piece2').show();
+$('#piece2').insertBefore('#blockCategory');
+break;
+case '3':
+$('#piece3').show();
+$('#piece3').insertBefore('#blockCategory');
+break;
+}
+if($("input:radio[name=piece]").is(":checked")){
+  $('input:radio[name=piece]').hide();
+  
+}
+for(var j=0; j<radios.length; j++){
+if(radios[j].value !=radios[i].value){
+$('input:radio[name=piece]').not(':checked').hide();
+$('input:radio[name=piece]').not(':checked').siblings('label').hide();
+
+}
+}
+
+$('.pie').toggleClass('active');
+$('.piece-icon').hide();
+}
+$('#piece1').click(function(){
+sessionStorage.removeItem('piece'); 
+$("#pieceChoice1").prop("checked", false);
+
+});
+$('#piece2').click(function(){
+sessionStorage.removeItem('piece');
+$("#pieceChoice2").prop("checked", false);
+ 
+});
+$('#piece3').click(function(){
+sessionStorage.removeItem('piece'); 
+$("#pieceChoice3").prop("checked", false);
+});
+
+}
+
+$('input[name="piece"]').click(function(){
+sessionStorage.setItem('piece',$(this).val());
+});
+
+});
+function universalSubmit(){
+document.forms["xyzForm"].submit(); 
+}
+
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+var radios = document.getElementsByName("material");
+var val = sessionStorage.getItem('material');
+for(var i=0; i<radios.length; i++){
+if(radios[i].value == val){
+radios[i].checked=true;
+$('#nsb').show();
+$('#blockPiece').show();
+switch(radios[i].value){
+case "chiffon":
+$('#material1').show();
+$('#material1').insertBefore('#blockCategory');
+break;
+case "cotton":
+$('#material2').show();
+$('#material2').insertBefore('#blockCategory');
+break;
+case "denim":
+$('#material3').show();
+$('#material3').insertBefore('#blockCategory');
+break;
+case "jacquard":
+$('#material4').show();
+$('#material4').insertBefore('#blockCategory');
+break;
+case "lawn":
+$('#material5').show();
+$('#material5').insertBefore('#blockCategory');
+break;
+case "linen":
+$('#material6').show();
+$('#material6').insertBefore('#blockCategory');
+break;
+case "rawsilk":
+$('#material7').show();
+$('#material7').insertBefore('#blockCategory');
+break;
+case "cambric":
+$('#material8').show();
+$('#material8').insertBefore('#blockCategory');
+break;
+case "khaddar":
+$('#material9').show();
+$('#material9').insertBefore('#blockCategory');
+break;
+}
+if($("input:radio[name=material]").is(":checked")){
+  $('input:radio[name=material]').hide();
+  
+}
+for(var j=0; j<radios.length; j++){
+if(radios[j].value !=radios[i].value){
+$('input:radio[name=material]').not(':checked').hide();
+$('input:radio[name=material]').not(':checked').siblings('label').hide();
+
+}
+}
+
+$('.mater').toggleClass('active');
+$('.material-icon').hide();
+}
+$('#material1').click(function(){
+sessionStorage.removeItem('material'); 
+$("#materialChoice1").prop("checked", false);
+});
+$('#material2').click(function(){
+sessionStorage.removeItem('material');
+$("#materialChoice2").prop("checked", false);
+ 
+});
+$('#material3').click(function(){
+sessionStorage.removeItem('material'); 
+$("#materialChoice3").prop("checked", false);
+
+});
+$('#material4').click(function(){
+sessionStorage.removeItem('material'); 
+$("#materialChoice4").prop("checked", false);
+
+});
+$('#material5').click(function(){
+sessionStorage.removeItem('material'); 
+$("#materialChoice5").prop("checked", false);
+
+});
+$('#material6').click(function(){
+sessionStorage.removeItem('material'); 
+$("#materialChoice6").prop("checked", false);
+
+});
+$('#material7').click(function(){
+sessionStorage.removeItem('material'); 
+$("#materialChoice7").prop("checked", false);
+
+});
+$('#material8').click(function(){
+sessionStorage.removeItem('material'); 
+$("#materialChoice8").prop("checked", false);
+
+});
+$('#material9').click(function(){
+sessionStorage.removeItem('material'); 
+$("#materialChoice9").prop("checked", false);
+
+});
+
+}
+$('input[name="material"]').click(function(){
+sessionStorage.setItem('material',$(this).val());
+});
+
+});
+
+function universalSubmit(){
+document.forms["xyzForm"].submit(); 
+}
+
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+var radios = document.getElementsByName("design");
+var val = sessionStorage.getItem('design');
+for(var i=0; i<radios.length; i++){
+if(radios[i].value == val){
+radios[i].checked=true;
+$('#nsb').show();
+$('#blockPiece').show();
+switch(radios[i].value){
+case "printed":
+$('#design1').show();
+$('#design1').insertBefore('#blockCategory');
+break;
+case "printedEmbroidered":
+$('#design2').show();
+$('#design2').insertBefore('#blockCategory');
+break;
+case "shawlDupatta":
+$('#design3').show();
+$('#design3').insertBefore('#blockCategory');
+break;
+case "tissueSilkDupatta":
+$('#design4').show();
+$('#design4').insertBefore('#blockCategory');
+break;
+case "twillViscoseDupatta":
+$('#design5').show();
+$('#design5').insertBefore('#blockCategory');
+break;
+case "plainViscoseDupatta":
+$('#design6').show();
+$('#design6').insertBefore('#blockCategory');
+break;
+case "palachiDupatta":
+$('#design7').show();
+$('#design7').insertBefore('#blockCategory');
+break;
+case "khaddarDupatta":
+$('#design8').show();
+$('#design8').insertBefore('#blockCategory');
+break;
+case "jacquardDupatta":
+$('#design9').show();
+$('#design9').insertBefore('#blockCategory');
+break;
+case "embroideredJacquard":
+$('#design10').show();
+$('#design10').insertBefore('#blockCategory');
+break;
+case "embroideredCottonNet":
+$('#design11').show();
+$('#design11').insertBefore('#blockCategory');
+break;
+case "embroideredChiffon":
+$('#design12').show();
+$('#design12').insertBefore('#blockCategory');
+break;
+case "embroidered":
+$('#design13').show();
+$('#design13').insertBefore('#blockCategory');
+break;
+case "digitalPrint":
+$('#design14').show();
+$('#design14').insertBefore('#blockCategory');
+break;
+case "cotailViscoseDupatta":
+$('#design15').show();
+$('#design15').insertBefore('#blockCategory');
+break;
+case "chiffonDupatta":
+$('#design16').show();
+$('#design16').insertBefore('#blockCategory');
+break;
+
+}
+if($("input:radio[name=design]").is(":checked")){
+  $('input:radio[name=design]').hide();
+  
+}
+for(var j=0; j<radios.length; j++){
+if(radios[j].value !=radios[i].value){
+$('input:radio[name=design]').not(':checked').hide();
+$('input:radio[name=design]').not(':checked').siblings('label').hide();
+}
+}
+
+$('.desi').toggleClass('active');
+$('.design-icon').hide();
+
+}
+$('#design1').click(function(){
+sessionStorage.removeItem('design'); 
+$("#designChoice1").prop("checked", false);
+
+});
+$('#design2').click(function(){
+sessionStorage.removeItem('design');
+$("#designChoice2").prop("checked", false);
+ 
+});
+$('#design3').click(function(){
+sessionStorage.removeItem('design'); 
+$("#designChoice3").prop("checked", false);
+
+});
+$('#design4').click(function(){
+sessionStorage.removeItem('design');
+$("#designChoice4").prop("checked", false);
+ 
+});
+$('#design5').click(function(){
+sessionStorage.removeItem('design');
+$("#designChoice5").prop("checked", false);
+ 
+});
+$('#design6').click(function(){
+sessionStorage.removeItem('design');
+$("#designChoice6").prop("checked", false);
+ 
+});
+$('#design7').click(function(){
+sessionStorage.removeItem('design'); 
+$("#designChoice7").prop("checked", false);
+
+});
+$('#design8').click(function(){
+sessionStorage.removeItem('design'); 
+$("#designChoice8").prop("checked", false);
+
+});
+$('#design9').click(function(){
+sessionStorage.removeItem('design'); 
+$("#designChoice9").prop("checked", false);
+
+});
+$('#design10').click(function(){
+sessionStorage.removeItem('design'); 
+$("#designChoice10").prop("checked", false);
+
+});
+$('#design11').click(function(){
+sessionStorage.removeItem('design'); 
+$("#designChoice11").prop("checked", false);
+
+});
+$('#design12').click(function(){
+sessionStorage.removeItem('design');
+$("#designChoice12").prop("checked", false);
+ 
+});
+$('#design13').click(function(){
+sessionStorage.removeItem('design'); 
+$("#designChoice13").prop("checked", false);
+
+});
+$('#design14').click(function(){
+sessionStorage.removeItem('design'); 
+$("#designChoice14").prop("checked", false);
+
+});
+$('#design15').click(function(){
+sessionStorage.removeItem('design'); 
+$("#designChoice15").prop("checked", false);
+
+});
+$('#design16').click(function(){
+sessionStorage.removeItem('design');
+$("#designChoice16").prop("checked", false);
+ 
+});
+
+}
+$('input[name="design"]').click(function(){
+sessionStorage.setItem('design',$(this).val());
+});
+
+});
+function universalSubmit(){
+document.forms["xyzForm"].submit(); 
+}
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+var radios = document.getElementsByName("size");
+var val = sessionStorage.getItem('size');
+for(var i=0; i<radios.length; i++){
+if(radios[i].value == val){
+radios[i].checked=true;
+$('#nsb').show();
+$('#blockPiece').show();
+switch(radios[i].value){
+case "s":
+$('#size1').show();
+$('#size1').insertBefore('#blockCategory');
+break;
+case "xs":
+$('#size2').show();
+$('#size2').insertBefore('#blockCategory');
+break;
+case "sm":
+$('#size3').show();
+$('#size3').insertBefore('#blockCategory');
+break;
+case "m":
+$('#size4').show();
+$('#size4').insertBefore('#blockCategory');
+break;
+case "l":
+$('#size5').show();
+$('#size5').insertBefore('#blockCategory');
+break;
+case "xl":
+$('#size6').show();
+$('#size6').insertBefore('#blockCategory');
+break;
+}
+if($("input:radio[name=size]").is(":checked")){
+  $('input:radio[name=size]').hide();
+  
+}
+for(var j=0; j<radios.length; j++){
+if(radios[j].value !=radios[i].value){
+$('input:radio[name=size]').not(':checked').hide();
+$('input:radio[name=size]').not(':checked').siblings('label').hide();
+}
+}
+
+$('.siz').toggleClass('active');
+$('.size-icon').hide();
+
+}
+$('#size1').click(function(){
+sessionStorage.removeItem('size');
+$("#sizeChoice1").prop("checked", false);
+ 
+});
+$('#size2').click(function(){
+sessionStorage.removeItem('size'); 
+$("#sizeChoice2").prop("checked", false);
+
+});
+$('#size3').click(function(){
+sessionStorage.removeItem('size'); 
+$("#sizeChoice3").prop("checked", false);
+
+});
+$('#size4').click(function(){
+sessionStorage.removeItem('size'); 
+$("#sizeChoice4").prop("checked", false);
+
+});
+$('#size5').click(function(){
+sessionStorage.removeItem('size'); 
+$("#sizeChoice5").prop("checked", false);
+
+});
+$('#size6').click(function(){
+sessionStorage.removeItem('size'); 
+$("#sizeChoice6").prop("checked", false);
+
+});
+
+}
+$('input[name="size"]').click(function(){
+sessionStorage.setItem('size',$(this).val());
+});
+
+});
+function universalSubmit(){
+document.forms["xyzForm"].submit(); 
+}
+
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+var radios = document.getElementsByName("price");
+var val = sessionStorage.getItem('price');
+for(var i=0; i<radios.length; i++){
+if(radios[i].value == val){
+radios[i].checked=true;
+$('#nsb').show();
+$('#blockPiece').show();
+switch(radios[i].value){
+case '1000':
+$('#price1').show();
+$('#price1').insertBefore('#blockCategory');
+break;
+case '1500':
+$('#price2').show();
+$('#price2').insertBefore('#blockCategory');
+break;
+case '2000':
+$('#price3').show();
+$('#price3').insertBefore('#blockCategory');
+break;
+case '2500':
+$('#price4').show();
+$('#price4').insertBefore('#blockCategory');
+break;
+case '3000':
+$('#price5').show();
+$('#price5').insertBefore('#blockCategory');
+break;
+case '3500':
+$('#price6').show();
+$('#price6').insertBefore('#blockCategory');
+break;
+case '4000':
+$('#price7').show();
+$('#price7').insertBefore('#blockCategory');
+break;
+
+}
+if($("input:radio[name=price]").is(":checked")){
+  $('input:radio[name=price]').hide();
+  
+}
+for(var j=0; j<radios.length; j++){
+if(radios[j].value !=radios[i].value){
+$('input:radio[name=price]').not(':checked').hide();
+$('input:radio[name=price]').not(':checked').siblings('label').hide();
+}
+}
+$('.pri').toggleClass('active');
+$('.price-icon').hide();
+
+}
+$('#price1').click(function(){
+sessionStorage.removeItem('price');
+$("#priceChoice1").prop("checked", false);
+ 
+});
+$('#price2').click(function(){
+sessionStorage.removeItem('price');
+$("#priceChoice2").prop("checked", false);
+ 
+});
+$('#price3').click(function(){
+sessionStorage.removeItem('price'); 
+$("#priceChoice3").prop("checked", false);
+
+});
+$('#price4').click(function(){
+sessionStorage.removeItem('price'); 
+$("#priceChoice4").prop("checked", false);
+
+});
+$('#price5').click(function(){
+sessionStorage.removeItem('price');
+$("#priceChoice5").prop("checked", false);
+ 
+});
+$('#price6').click(function(){
+sessionStorage.removeItem('price'); 
+$("#priceChoice6").prop("checked", false);
+
+});
+$('#price7').click(function(){
+sessionStorage.removeItem('price'); 
+$("#priceChoice7").prop("checked", false);
+
+});
+
+}
+$('input[name="price"]').click(function(){
+sessionStorage.setItem('price',$(this).val());
+});
+
+});
+function universalSubmit(){
+document.forms["xyzForm"].submit(); 
+}
+
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+var radios = document.getElementsByName("color");
+var val = sessionStorage.getItem('color');
+for(var i=0; i<radios.length; i++){
+if(radios[i].value == val){
+radios[i].checked=true;
+$('#nsb').show();
+$('#blockPiece').show();
+switch(radios[i].value){
+case "black":
+$('#color1').show();
+$('#color1').insertBefore('#blockCategory');
+break;
+case "blue":
+$('#color2').show();
+$('#color2').insertBefore('#blockCategory');
+break;
+case "green":
+$('#color3').show();
+$('#color3').insertBefore('#blockCategory');
+break;
+case "orange":
+$('#color4').show();
+$('#color4').insertBefore('#blockCategory');
+break;
+case "white":
+$('#color5').show();
+$('#color5').insertBefore('#blockCategory');
+break;
+case "yellow":
+$('#color6').show();
+$('#color6').insertBefore('#blockCategory');
+break;
+case "pink":
+$('#color7').show();
+$('#color7').insertBefore('#blockCategory');
+break;
+
+}
+if($("input:radio[name=color]").is(":checked")){
+  $('input:radio[name=color]').hide();
+  
+}
+for(var j=0; j<radios.length; j++){
+if(radios[j].value !=radios[i].value){
+$('input:radio[name=color]').not(':checked').hide();
+$('input:radio[name=color]').not(':checked').siblings('label').hide();
+}
+}
+$('.col').toggleClass('active');
+$('.color-icon').hide();
+
+}
+$('#color1').click(function(){
+sessionStorage.removeItem('color'); 
+$("#colorChoice1").prop("checked", false);
+
+});
+$('#color2').click(function(){
+sessionStorage.removeItem('color'); 
+$("#colorChoice2").prop("checked", false);
+
+});
+$('#color3').click(function(){
+sessionStorage.removeItem('color');
+$("#colorChoice3").prop("checked", false);
+
+});
+$('#color4').click(function(){
+sessionStorage.removeItem('color'); 
+$("#colorChoice4").prop("checked", false);
+
+});
+$('#color5').click(function(){
+sessionStorage.removeItem('color'); 
+$("#colorChoice5").prop("checked", false);
+
+});
+$('#color6').click(function(){
+sessionStorage.removeItem('color'); 
+$("#colorChoice6").prop("checked", false);
+
+});
+$('#color7').click(function(){
+sessionStorage.removeItem('color'); 
+$("#colorChoice7").prop("checked", false);
+
+});
+
+}
+$('input[name="color"]').click(function(){
+sessionStorage.setItem('color',$(this).val());
+});
+
+});
+function universalSubmit(){
+document.forms["xyzForm"].submit(); 
+}
+
+</script>
+
+   <!--humburger icon & sidebar script-->
+  <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.menu-icon').click(function(){
+	    $('.menu-icon').toggleClass('active');	
+	 });
+	  $('.menu-icon').click(function(){
+	    $('.sidebar').toggleClass('active');
+		
+	 });
+	 });
+	 </script>
+      <!--footer script-->
+    <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.company li').click(function(){
+	    $('.comp').toggleClass('active');
+		 $('.company-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.customer li').click(function(){
+	    $('.cust').toggleClass('active');
+		 $('.customer-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.help li').click(function(){
+	    $('.hel').toggleClass('active');
+		 $('.help-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <!--sidebar script-->
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.newIn li').click(function(){
+	    $('.new').toggleClass('active');
+		 $('.newIn-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.woman li').click(function(){
+	    $('.wom').toggleClass('active');
+		 $('.woman-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.woman2 li').click(function(){
+	    $('.wom2').toggleClass('active');
+		 $('.woman2-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+    <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.woman3 li').click(function(){
+	    $('.wom3').toggleClass('active');
+		 $('.woman3-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.man li').click(function(){
+	    $('.ma').toggleClass('active');
+		 $('.man-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.man2 li').click(function(){
+	    $('.ma2').toggleClass('active');
+		 $('.man2-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.kids li').click(function(){
+	    $('.kid').toggleClass('active');
+		 $('.kids-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+    <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.kids2 li').click(function(){
+	    $('.kid2').toggleClass('active');
+		 $('.kids2-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.accessories li').click(function(){
+	    $('.acce').toggleClass('active');
+		 $('.accessories-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+    <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.accessories2 li').click(function(){
+	    $('.acce2').toggleClass('active');
+		 $('.accessories2-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.kurtas li').click(function(){
+	    $('.kurt').toggleClass('active');
+		 $('.kurtas-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.bottomss li').click(function(){
+	    $('.bott').toggleClass('active');
+		 $('.bottomss-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.waist li').click(function(){
+	    $('.wais').toggleClass('active');
+		 $('.waist-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.girls li').click(function(){
+	    $('.girl').toggleClass('active');
+		 $('.girls-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.gwest li').click(function(){
+	    $('.gwes').toggleClass('active');
+		 $('.gwest-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.boys li').click(function(){
+	    $('.boy').toggleClass('active');
+		 $('.boys-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.bwest li').click(function(){
+	    $('.bwes').toggleClass('active');
+		 $('.bwest-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+      <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.other li').click(function(){
+	    $('.oth').toggleClass('active');
+		 $('.other-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.unstitched li').click(function(){
+	    $('.unsti').toggleClass('active');
+		 $('.unstitched-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.pret li').click(function(){
+	    $('.pre').toggleClass('active');
+		 $('.pret-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.khaas li').click(function(){
+	    $('.khaa').toggleClass('active');
+		 $('.khaas-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.bott2 li').click(function(){
+	    $('.bot2').toggleClass('active');
+		 $('.bott2-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   <!--lawn_vol_1 filter start-->
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.filters li').click(function(){
+	    $('.filt').toggleClass('active');
+		// $('.filters-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.category li').click(function(){
+	    $('.cate').toggleClass('active');
+		 $('.category-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   <script type="text/javascript">
+   
+   </script>
+  
+  <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.material li').click(function(){
+	    $('.mater').toggleClass('active');
+		 $('.material-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.size li').click(function(){
+	    $('.siz').toggleClass('active');
+		 $('.size-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.prices li').click(function(){
+	    $('.pri').toggleClass('active');
+		 $('.prices-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.colors li').click(function(){
+	    $('.col').toggleClass('active');
+		 $('.colors-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+  
+  <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.design li').click(function(){
+	    $('.desi').toggleClass('active');
+		 $('.design-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+   <script type="text/javascript">
+	 $(document).ready(function(){
+	 $('.piece li').click(function(){
+	    $('.pie').toggleClass('active');
+		 $('.piece-icon').toggleClass('active');
+	 });
+	 });
+   </script>
+  <!--lawn_vol_1 filter end-->
+</head>
+<body>
+<!--Header Showcase-->
+<header id="showcase" class="grid">
+
+<div class="top" id="top">FREE SHIPMENT NATIONWIDE</div>
+<div class="middle" id="middle">
+<ul class="mid">
+<li class="mi"><span><a href="tel:03002077214"><i class="fas fa-phone fa-1x"></i></a></span></li>
+<li class="mi">welcome</li>
+<li class="mi"><i class="fas fa-user fa-1x"></i></li>
+</ul>
+</div>
+<div class="bottom" id="bottom">
+<ul class="bot">
+<li class="bo"><div class="menu-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ 
+ </div>
+
+
+ </li>
+<li class="bo"><a href="/"><img src="../images/favicon.ico"/></a></li>
+<li class="bo"><span><i class="fas fa-shopping-basket fa-2x"></i></span></li>
+</ul>
+</div>
+
+</header>
+<!--sidebar-->
+ <div class="sidebar" class="grid">
+ 
+ <ul class="newIn">
+ <li>New In</li>
+ <li><div class="newIn-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div>
+ </li>
+ </ul>
+ <hr/>
+ 
+ <ul class="new">
+ <li><ul class="woman">
+<li>Woman</li>
+<li><div class="woman-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div></li>
+</ul>
+</li>
+<ul class="wom">
+<li><a href="http://localhost:3000/newIn/unstitched">Unstitched </a></li>
+<li><a href="http://localhost:3000/newIn/pret">Pret</a></li>
+<li><a href="http://localhost:3000/newIn/khaas">Khaas</a></li>
+<li><a href="http://localhost:3000/newIn/bottoms">Bottoms</a></li>
+</ul>
+
+
+<li><ul class="man">
+ <li>Man</li>
+ <li><div class="man-icon">
+ <span></span>  
+ <span></span>
+ <span></span>
+ </div></li>
+ </ul>
+ </li>
+ <ul class="ma">
+<li><a href="http://localhost:3000/newIn/kurta">Kurta</a></li>
+<li><a href="http://localhost:3000/newIn/shalwarKameez">Shalwar Kameez</a></li>
+</ul>
+
+ 
+ 
+ <li><ul class="kids">
+<li>Kids</li>
+<li><div class="kids-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div></li>
+</ul>
+</li>
+ <ul class="kid">
+<li><a href="http://localhost:3000/newIn/boys">Boys</a></li>
+<li><a href="http://localhost:3000/newIn/girls">Girls</a></li>
+
+</ul>
+ 
+ <li><ul class="accessories">
+ <li>Accessories</li>
+ <li><div class="accessories-icon">
+ <span></span>  
+ <span></span>
+ <span></span>
+ </div></li>
+ </ul><hr>
+ </li>
+ <ul class="acce">
+<li><a href="http://localhost:3000/newIn/woman">Woman</a></li>
+<li><a href="http://localhost:3000/newIn/others">Others</a></li>
+
+</ul>
+
+ </ul> 
+ 
+ <ul class="woman2">
+ <li>Woman</li>
+ <li><div class="woman2-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div>
+ </li>
+ </ul>
+ <hr/>
+ <ul class="wom2">
+<li><ul class="unstitched">
+ <li>Unstitched</li>
+ <li><div class="unstitched-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div>
+ </li>
+ </ul>
+ 
+ <ul class="unsti">
+<li><a href="http://localhost:3000/woman/twopc_summer_vibes">2PC-SUMMER VIBES</a></li>
+<li><a href="http://localhost:3000/woman/luxury_collection">LUXURY COLLECTION</a></li>
+<li><a href="http://localhost:3000/woman/lawn_vol_1">LAWN VOL.1</a></li>
+<li><a href="http://localhost:3000/woman/lawn_vol_2">LAWN VOL.2</a></li>
+</ul></li>
+
+
+<li><ul class="pret">
+ <li>PRET</li>
+ <li><div class="pret-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div>
+ </li>
+ </ul>
+ 
+ <ul class="pre">
+<li><a href="http://localhost:3000/woman/kurta">KURTA</a></li>
+
+</ul></li>
+
+<li><ul class="khaas">
+ <li>KHAAS</li>
+ <li><div class="khaas-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div>
+ </li>
+ </ul>
+ 
+ <ul class="khaa">
+<li><a href="http://localhost:3000/woman/semi_formals">SEMI FORMALS</a></li>
+<li><a href="http://localhost:3000/woman/casual">CASUAL</a></li>
+
+</ul></li>
+
+<li><ul class="bott2">
+ <li>BOTTOM</li>
+ <li><div class="bott2-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div>
+ </li>
+ </ul>
+ 
+ <ul class="bot2">
+<li><a href="http://localhost:3000/woman/formal_pants">FORMAL PANTS</a></
+<li><a href="http://localhost:3000/woman/pants">PANTS</a></li>
+<li><a href="http://localhost:3000/woman/shalwar">SHALWAR</a></li>
+<li><a href="http://localhost:3000/woman/denim">DENIM</a></li>
+<li><a href="http://localhost:3000/woman/tights">TIGHTS</a></li>
+
+</ul></li>
+
+</ul>
+
+<ul class="man2">
+ <li>Man</li>
+ <li><div class="man2-icon">
+ <span></span>  
+ <span></span>
+ <span></span>
+ </div></li>
+ </ul><hr/>
+ <ul class="ma2">
+
+ <li><ul class="kurtas">
+ <li>Kurtas</li>
+ <li><div class="kurtas-icon">
+ <span></span>  
+ <span></span>
+ <span></span>
+ </div></li>
+ </ul>
+ </li>
+ 
+ <ul class="kurt">
+<li><a href="http://localhost:3000/man/basicKurta">Basic Kurta </a></li>
+<li><a href="http://localhost:3000/man/kurtaShalwar">Kurta Shalwar</a></li>
+<li><a href="http://localhost:3000/man/shalwarKameez">Shalwar Kameez</a></li>
+<li><a href="http://localhost:3000/man/shortKurta">Short Kurta</a></li>
+</ul>
+
+<li><ul class="bottomss">
+ <li>Bottom</li>
+ <li><div class="bottomss-icon">
+ <span></span>  
+ <span></span>
+ <span></span>
+ </div></li>
+ </ul>
+ </li>
+ 
+ <ul class="bott">
+<li><a href="http://localhost:3000/man/pajama">Pajama </a></li>
+<li><a href="http://localhost:3000/man/shalwar">Shalwar</a></li>
+
+</ul>
+ 
+
+<li><ul class="waist">
+ <li>WaistCoats</li>
+ <li><div class="waist-icon">
+ <span></span>  
+ <span></span>
+ <span></span>
+ </div></li>
+ </ul>
+ </li>
+ 
+  <ul class="wais">
+<li><a href="http://localhost:3000/man/embroidered">Embroidered</a></li>
+<li><a href="http://localhost:3000/man/classic">Classic</a></li>
+
+</ul>
+
+ 
+</ul>
+ 
+<ul class="kids2">
+<li>Kids</li>
+<li><div class="kids2-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div></li>
+</ul><hr/>
+
+<ul class="kid2">
+<li> <ul class="girls">
+ <li>Girls Ethnic</li>
+ <li><div class="girls-icon">
+ <span></span>  
+ <span></span>
+ <span></span>
+ </div></li>
+ </ul>
+ </li>
+ <ul class="girl">
+ <li><a href="http://localhost:3000/kids/kurta">Kurta </a></li>
+ <li><a href="http://localhost:3000/kids/kurtaPajama">Kurta Pajama</a></li>
+ <li><a href="http://localhost:3000/kids/pants">Pants</a></li>
+ <li><a href="http://localhost:3000/kids/formalSuits">Formal Suits</a></li>
+</ul> 
+ 
+
+
+<li><ul class="gwest">
+ <li>Girls Western</li>
+ <li><div class="gwest-icon">
+ <span></span>  
+ <span></span>
+ <span></span>
+ </div></li>
+ </ul><hr/>
+ </li>
+ <ul class="gwes">
+ <li><a href="http://localhost:3000/kids/blouses">Blouses</a></li>
+ <li><a href="http://localhost:3000/kids/dresses">Dresses</a></li>
+ <li><a href="http://localhost:3000/kids/tights">Tights</a></li>
+ <li><a href="http://localhost:3000/kids/pants">Pants</a></li>
+</ul> 
+ 
+
+ 
+ <li><ul class="boys">
+ <li>Boys Ethnic</li>
+ <li><div class="boys-icon">
+ <span></span>  
+ <span></span>
+ <span></span>
+ </div></li>
+ </ul><hr/>
+ </li>
+ <ul class="boy">
+ <li><a href="http://localhost:3000/kids/kurta">Kurta</a></li>
+ <li><a href="http://localhost:3000/kids/kurtaPajama">Kurta Pajama</a></li>
+ <li><a href="http://localhost:3000/kids/waistcoat">WaistCoat</a></li>
+ <li><a href="http://localhost:3000/kids/shalwar">Shalwar</a></li>
+</ul> 
+ 
+<li><ul class="bwest">
+ <li>Boys Western</li>
+ <li><div class="bwest-icon">
+ <span></span>  
+ <span></span>
+ <span></span>
+ </div></li>
+ </ul><hr/>
+ </li>
+ <ul class="bwes">
+ <li><a href="http://localhost:3000/kids/denim">Denim</a></li>
+ <li><a href="http://localhost:3000/kids/tShirts">T-Shirts</a></li>
+ <li><a href="http://localhost:3000/kids/shirts">Shirts</a></li>
+ 
+</ul> 
+
+</ul>
+
+<ul class="accessories2">
+<li>Accessories</li>
+<li><div class="accessories2-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div></li>
+</ul><hr/>
+
+<ul class="acce2">
+<li><ul class="woman3">
+<li>Woman</li>
+<li><div class="woman3-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div></li>
+</ul></li>
+<ul class="wom3">
+<li><a href="http://localhost:3000/accessories/footwear">FootWear</a></li>
+<li><a href="http://localhost:3000/accessories/fragrance">Fragrance</a></li>
+<li><a href="http://localhost:3000/accessories/jewelry">Jewelry</a></li>
+<li><a href="http://localhost:3000/accessories/handbags">HandBags</a></li>
+<li><a href="http://localhost:3000/accessories/clutches">Clutches</a></li>
+<li><a href="http://localhost:3000/accessories/scarves">Scarves</a></li>
+<li><a href="http://localhost:3000/accessories/sunglasses">SunGlasses</a></li>
+<li><a href="http://localhost:3000/accessories/wallets">Wallets</a></li>
+<li><a href="http://localhost:3000/accessories/dupatta">Dupatta</a></li>
+<li><a href="http://localhost:3000/accessories/stole">Stole</a></li>
+<li><a href="http://localhost:3000/accessories/tankTops">Tank Tops</a></li>
+</ul>
+<li><ul class="girls">
+<li>Girls</li>
+<li><div class="girls-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div></li>
+</ul><hr/>
+</li>
+<ul class="girl">
+<li><a href="http://localhost:3000/accessories/bags">Bags</a></li>
+<li><a href="http://localhost:3000/accessories/hairAccessories">Hair Accessories</a></li>
+<li><a href="http://localhost:3000/accessories/jewelry">Jewelry</a></li>
+
+</ul>
+<li><ul class="other">
+<li>Others</li>
+<li><div class="other-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div></li>
+</ul><hr/>
+</li>
+<ul class="oth">
+<li><a href="http://localhost:3000/accessories/notebooks">NoteBooks</a></li>
+
+</ul>
+
+</ul>
+
+ <ul class="social-icon">
+    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+	<li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+	<li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+	<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+	<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+ </ul>
+ </div>
+<!--section B start-->
+  
+ <div class="lawn_vol_1" class="grid">
+  <!--filters section start-->
+
+ <div class="filter"> 
+
+ <ul class="filters">
+ <li>FILTERS</li>
+ </ul>
+
+<div class="selectdiv"> 
+  <form name="productPerPageForm" action="http://localhost:3000/woman/lawn_vol_1" method="get">
+
+ <select name="productPerPage" id="productPerPage" onchange="productPerPageSubmit()">
+		<option></option>
+		<option value="8">8</option>
+         <option value="16">16</option>
+	    <option value="32">32</option>
+   </select>
+ </form>
+   </div>
+
+<div class ="clearfix"></div>
+
+ <ul class="filt">
+  <form name="xyzForm" action="http://localhost:3000/woman/lawn_vol_1" method="get">
+
+ <li><ul id="nsb">
+<li>NOW SHOPPING BY</li>
+<li><button type="button" id="blockclose">Clear All</button></li>
+</li>
+</ul>
+
+<li><ul class="category">
+<li>CATEGORY</li>
+<li><div class="category-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div></li>
+</ul>
+</li>
+<ul class="cate">
+<li><div class="vertical-radio-buttons">
+
+   <div>
+   <span>
+  <input type="radio" name="category" value="unstitched" id="categoryChoice1" onchange="universalSubmit()">
+  <label for="categoryChoice1">Unstitched</label>
+   </span>
+   </div>
+   
+    <button type="btn" class="close-btn" id="category1"></button>
+   
+	<div>
+	<span>
+  <input type="radio" name="category" value="pret"id="categoryChoice2" onchange= "universalSubmit()">
+  <label for="categoryChoice2">Pret </label>
+  </span>
+  </div>
+  
+   <button type="btn" id="category2" class="close-btn"></button>
+   
+	<div>
+	<span>
+  <input type="radio" name="category" value="bottoms" id="categoryChoice3" onchange= "universalSubmit()">
+  <label for="categoryChoice3">Bottoms</label>
+  </span>
+  </div>
+  
+  <button type="btn" id="category3" class="close-btn"></button>
+
+<div class ="clearfix"></div>
+
+</div>
+</li>
+</ul>
+
+<li><ul class="piece">
+<li>PIECE</li>
+<li><div class="piece-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div></li>
+</ul>
+</li>
+<ul class="pie">
+<li><div class="vertical-radio-buttons">
+
+      <div>
+	  <span>
+      <input type="radio" id="pieceChoice1"
+       name="piece" value=1 onchange="universalSubmit()">
+      <label for="pieceChoice1">1 Piece</label>
+</span>
+</div>
+<button type="btn" class="close-btn" id="piece1"></button>
+
+<div><span>
+      <input type="radio" id="pieceChoice2"
+       name="piece" value=2 onchange="universalSubmit()">
+      <label for="pieceChoice2">2 Piece</label>
+</span></div>
+<button type="btn" class="close-btn" id="piece2"></button>
+
+<div><span>
+      <input type="radio" id="pieceChoice3"
+       name="piece" value=3 onchange="universalSubmit()">
+      <label for="pieceChoice3">3 Piece</label>
+</span></div>
+<button type="btn" class="close-btn" id="piece3"></button>
+
+ <div class ="clearfix"></div>
+
+</div>
+</li>
+</ul>
+
+<li><ul class="material">
+ <li>Material</li>
+ <li><div class="material-icon">
+ <span></span>  
+ <span></span>
+ <span></span>
+ </div></li>
+ </ul>
+ </li>
+ <ul class="mater">
+<li><div class="vertical-radio-buttons">
+
+      <div>
+	  <span>
+      <input type="radio" id="materialChoice1"
+       name="material" value="chiffon" onchange="universalSubmit()">
+      <label for="materialChoice1">Chiffon</label>
+</span>
+</div>
+<button type="btn" class="close-btn" id="material1"></button>
+
+<div><span>
+      <input type="radio" id="materialChoice2"
+       name="material" value="cotton" onchange="universalSubmit()">
+      <label for="materialChoice2">Cotton</label>
+</span></div>
+<button type="btn" class="close-btn" id="material2"></button>
+
+<div><span>
+      <input type="radio" id="materialChoice3"
+       name="material" value="denim" onchange="universalSubmit()">
+      <label for="materialChoice3">Denim</label>
+	  </span></div>
+	  <button type="btn" class="close-btn" id="material3"></button>
+
+	  <div><span>
+	  <input type="radio" id="materialChoice4"
+       name="material" value="jacquard" onchange="universalSubmit()">
+      <label for="materialChoice4">Jacquard</label>
+</span></div>
+<button type="btn" class="close-btn" id="material4"></button>
+
+<div><span>
+      <input type="radio" id="materialChoice5"
+       name="material" value="lawn" onchange="universalSubmit()">
+      <label for="materialChoice5">Lawn</label>
+</span></div>
+<button type="btn" class="close-btn" id="material5"></button>
+
+<div><span>
+      <input type="radio" id="materialChoice6"
+       name="material" value="linen" onchange="universalSubmit()">
+      <label for="materialChoice6">Linen</label>
+	  </span></div>
+	  <button type="btn" class="close-btn" id="material6"></button>
+
+	  <div><span>
+	  <input type="radio" id="materialChoice7"
+       name="material" value="rawsilk" onchange="universalSubmit()">
+      <label for="materialChoice7">Raw Silk</label>
+ </span></div>
+ <button type="btn" class="close-btn" id="material7"></button>
+
+	<div>
+	  <span>
+      <input type="radio" id="materialChoice8"
+       name="material" value="cambric" onchange="universalSubmit()">
+      <label for="materialChoice8">Cambric</label>
+</span>
+</div>
+<button type="btn" class="close-btn" id="material8"></button>
+
+<div>
+	  <span>
+      <input type="radio" id="materialChoice9"
+       name="material" value="khaddar" onchange="universalSubmit()">
+      <label for="materialChoice9">Khaddar</label>
+</span>
+</div>
+<button type="btn" class="close-btn" id="material9"></button>
+
+ <div class ="clearfix"></div>
+
+</div>
+</li>
+</ul>
+
+<li><ul class="design">
+<li>Design</li>
+<li><div class="design-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div></li>
+</ul>
+</li>
+  <ul class="desi">
+<li><div class="vertical-radio-buttons">
+
+      <div>
+	  <span>
+      <input type="radio" id="designChoice1"
+       name="design" value="printed" onchange="universalSubmit()">
+      <label for="designChoice1">Printed</label>
+</span>
+</div>
+<button type="btn" class="close-btn" id="design1"></button>
+
+<div><span>
+      <input type="radio" id="designChoice2"
+       name="design" value="printedEmbroidered" onchange="universalSubmit()">
+      <label for="designChoice2">Printed Embroidered</label>
+</span></div>
+<button type="btn" class="close-btn" id="design2"></button>
+
+<div><span>
+      <input type="radio" id="designChoice3"
+       name="design" value="shawlDupatta" onchange="universalSubmit()">
+      <label for="designChoice3">Shawl Dupatta</label>
+	  </span></div>
+	  <button type="btn" class="close-btn" id="design3"></button>
+
+	  <div><span>
+	  <input type="radio" id="designChoice4"
+       name="design" value="tissueSilkDupatta" onchange="universalSubmit()">
+      <label for="designChoice4">Tissue Silk Dupatta</label>
+</span></div>
+<button type="btn" class="close-btn" id="design4"></button>
+
+<div><span>
+      <input type="radio" id="designChoice5"
+       name="design" value="twillViscoseDupatta" onchange="universalSubmit()">
+      <label for="designChoice5">Twill Viscose Dupatta</label>
+</span></div>
+<button type="btn" class="close-btn" id="design5"></button>
+
+<div><span>
+      <input type="radio" id="designChoice6"
+       name="design" value="plainViscoseDupatta" onchange="universalSubmit()">
+      <label for="designChoice6">Plain Viscose Dupatta</label>
+	  </span></div>
+	  <button type="btn" class="close-btn" id="design6"></button>
+
+	  <div><span>
+	  <input type="radio" id="designChoice7"
+       name="design" value="palachiDupatta" onchange="universalSubmit()">
+      <label for="designChoice7">Palachi Dupatta</label>
+ </span></div>
+ <button type="btn" class="close-btn" id="design7"></button>
+
+	<div>
+	  <span>
+      <input type="radio" id="designChoice8"
+       name="design" value="khaddarDupatta" onchange="universalSubmit()">
+      <label for="designChoice8">Khaddar Dupatta</label>
+</span>
+</div>
+<button type="btn" class="close-btn" id="design8"></button>
+
+<div>
+	  <span>
+      <input type="radio" id="designChoice9"
+       name="design" value="jacquardDupatta" onchange="universalSubmit()">
+      <label for="designChoice9">Jacquard Dupatta</label>
+</span>
+</div>
+<button type="btn" class="close-btn" id="design9"></button>
+
+<div>
+	  <span>
+      <input type="radio" id="designChoice10"
+       name="design" value="embroideredJacquard" onchange="universalSubmit()">
+      <label for="designChoice10">Embroidered Jacquard</label>
+</span>
+</div>
+<button type="btn" class="close-btn" id="design10"></button>
+
+<div>
+	  <span>
+      <input type="radio" id="designChoice11"
+       name="design" value="embroideredCottonNet" onchange="universalSubmit()">
+      <label for="designChoice11">Embroidered Cotton Net</label>
+</span>
+</div>
+<button type="btn" class="close-btn" id="design11"></button>
+
+<div>
+	  <span>
+      <input type="radio" id="designChoice12"
+       name="design" value="embroideredChiffon" onchange="universalSubmit()">
+      <label for="designChoice12">Embroidered Chiffon</label>
+</span>
+</div>
+<button type="btn" class="close-btn" id="design12"></button>
+
+<div>
+	  <span>
+      <input type="radio" id="designChoice13"
+       name="design" value="embroidered" onchange="universalSubmit()">
+      <label for="designChoice13">Embroidered</label>
+</span>
+</div>
+<button type="btn" class="close-btn" id="design13"></button>
+
+<div>
+	  <span>
+      <input type="radio" id="designChoice14"
+       name="design" value="digitalPrint" onchange="universalSubmit()">
+      <label for="designChoice14">Digital Print</label>
+</span>
+</div>
+<button type="btn" class="close-btn" id="design14"></button>
+
+<div>
+	  <span>
+      <input type="radio" id="designChoice15"
+       name="design" value="cotailViscoseDupatta" onchange="universalSubmit()">
+      <label for="designChoice15">Cotail Viscose Dupatta</label>
+</span>
+</div>
+<button type="btn" class="close-btn" id="design15"></button>
+
+<div>
+	  <span>
+      <input type="radio" id="designChoice16"
+       name="design" value="chiffonDupatta" onchange="universalSubmit()">
+      <label for="designChoice16">Chiffon Dupatta</label>
+</span>
+</div>
+<button type="btn" class="close-btn" id="design16"></button>
+
+ <div class ="clearfix"></div>
+
+</div>
+</li>
+</ul>
+ 
+ <li><ul class="size">
+<li>SIZE</li>
+<li><div class="size-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div></li>
+</ul>
+</li>
+ <ul class="siz">
+<li><div class="vertical-radio-buttons">
+
+   <div><span>
+     <input type="radio" id="sizeChoice1"
+       name="size" value="s" onchange="universalSubmit()">
+      <label for="sizeChoice1">Small</label>
+</span></div>
+<button type="btn" class="close-btn" id="size1"></button>
+
+<div><span>
+      <input type="radio" id="sizeChoice2"
+       name="size" value="xs" onchange="universalSubmit()">
+      <label for="sizeChoice2">extra small</label>
+</span></div>
+<button type="btn" class="close-btn" id="size2"></button>
+
+<div><span>
+      <input type="radio" id="sizeChoice3"
+       name="size" value="sm" onchange="universalSubmit()">
+      <label for="sizeChoice3">small medium</label>
+	  </span></div>
+	  <button type="btn" class="close-btn" id="size3"></button>
+
+	  <div><span>
+	  <input type="radio" id="sizeChoice4"
+       name="size" value="m" onchange="universalSubmit()">
+      <label for="sizeChoice4">medium</label>
+</span></div>
+<button type="btn" class="close-btn" id="size4"></button>
+
+<div><span>
+      <input type="radio" id="sizeChoice5"
+       name="size" value="l" onchange="universalSubmit()">
+      <label for="sizeChoice5">Large</label>
+</span></div>
+<button type="btn" class="close-btn" id="size5"></button>
+
+<div><span>
+      <input type="radio" id="sizeChoice6"
+       name="size" value="xl" onchange="universalSubmit()">
+      <label for="sizeChoice6">Extra Large</label>
+ </span></div>
+ <button type="btn" class="close-btn" id="size6"></button>
+
+ <div class ="clearfix"></div>
+
+</div>
+</li>
+
+</ul>
+ 
+ <li><ul class="prices">
+ <li>PRICE</li>
+ <li><div class="prices-icon">
+ <span></span>  
+ <span></span>
+ <span></span>
+ </div></li>
+ </ul>
+ </li>
+ <ul class="pri">
+<li><div class="vertical-radio-buttons">
+
+ <div>
+ <span>
+     <input type="radio" id="priceChoice1"
+       name="price" value=1000 onchange="universalSubmit()">
+      <label for="priceChoice1">PKR 500.00-PKR 999.99</label>
+</span>
+</div>
+ <button type="btn" class="close-btn" id="price1"></button>
+
+<div>
+<span>
+      <input type="radio" id="priceChoice2"
+       name="price" value=1500 onchange="universalSubmit()">
+      <label for="priceChoice2">PKR 1,000.00-PKR 1,499.99</label>
+</span>
+</div>
+ <button type="btn" class="close-btn" id="price2"></button>
+
+<div>
+<span>
+      <input type="radio" id="priceChoice3"
+       name="price" value=2000 onchange="universalSubmit()">
+      <label for="priceChoice3">PKR 1,500.00-PKR 1,999.99</label>
+	  </span>
+	  </div>
+	   <button type="btn" class="close-btn" id="price3"></button>
+
+	  <div>
+	  <span>
+	  <input type="radio" id="priceChoice4"
+       name="price" value=2500 onchange="universalSubmit()">
+      <label for="priceChoice4">PKR 2,000.00-PKR 2,499.99</label>
+</span>
+</div>
+ <button type="btn" class="close-btn" id="price4"></button>
+
+<div>
+<span>
+      <input type="radio" id="priceChoice5"
+       name="price" value=3000 onchange="universalSubmit()">
+      <label for="priceChoice5">PKR 2,500.00-PKR 2,999.99</label>
+</span>
+</div>
+ <button type="btn" class="close-btn" id="price5"></button>
+
+<div>
+<span>
+      <input type="radio" id="priceChoice6"
+       name="price" value=3500 onchange="universalSubmit()">
+      <label for="priceChoice6">PKR 3,000.00-PKR 3,499.99</label>
+ </span>
+ </div>
+  <button type="btn" class="close-btn" id="price6"></button>
+
+ <div>
+ <span>
+      <input type="radio" id="priceChoice7"
+       name="price" value=4000 onchange="universalSubmit()">
+      <label for="priceChoice7">PKR 3,500.00-PKR 3,999.99</label>
+ </span>
+ </div>
+  <button type="btn" class="close-btn" id="price7"></button>
+<div class ="clearfix"></div>
+
+</div>
+</li>
+
+</ul>
+
+<li><ul class="colors">
+ <li>COLOR</li>
+ <li><div class="colors-icon">
+ <span></span>  
+ <span></span>
+ <span></span>
+ </div></li>
+ </ul>
+ </li>
+ <ul class="col">
+<li><div class="vertical-radio-buttons">
+
+<div>
+<span>
+      <input type="radio" id="colorChoice1"
+       name="color" value="black" onchange="universalSubmit()">
+      <label for="colorChoice1">Black</label>
+</span>
+</div>
+  <button type="btn" class="close-btn" id="color1"></button>
+
+<div>
+<span>
+      <input type="radio" id="colorChoice2"
+       name="color" value="blue" onchange="universalSubmit()">
+      <label for="colorChoice2">Blue</label>
+</span>
+</div>
+  <button type="btn" class="close-btn" id="color2"></button>
+
+<div>
+<span>
+      <input type="radio" id="colorChoice3"
+       name="color" value="green" onchange="universalSubmit()">
+      <label for="colorChoice3">Green</label>
+ </span>
+ </div>
+	    <button type="btn" class="close-btn" id="color3" onclick = "loadData()"></button>
+
+	  <div>
+	  <span>
+	   <input type="radio" id="colorChoice4"
+       name="color" value="orange" onchange="universalSubmit()">
+      <label for="colorChoice4">Orange</label>
+</span>
+</div>
+  <button type="btn" class="close-btn" id="color4"></button>
+
+<div>
+<span>
+      <input type="radio" id="colorChoice5"
+       name="color" value="white" onchange="universalSubmit()">
+      <label for="colorChoice5">White</label>
+</span>
+</div>
+  <button type="btn" class="close-btn" id="color5"></button>
+
+<div>
+<span>
+      <input type="radio" id="colorChoice6"
+       name="color" value="yellow" onchange="universalSubmit()">
+      <label for="colorChoice6">Yellow</label>
+ </span>
+ </div>
+   <button type="btn" class="close-btn" id="color6"></button>
+
+ <div>
+ <span>
+      <input type="radio" id="colorChoice7"
+       name="color" value="pink" onchange="universalSubmit()">
+      <label for="colorChoice7">Pink</label>
+ </span>
+ </div>
+   <button type="btn" class="close-btn" id="color7"></button>
+
+ <div class ="clearfix"></div>
+
+</div>
+</li>
+
+</ul>
+
+</form>
+ </ul>  <!-- end div ul filt-->
+ </div> <!-- end div class filter-->
+ 
+ <!--filter section end-->
+ <div class="navigate1">
+  <form name="pageForm" action="http://localhost:3000/woman/lawn_vol_1" method="get">
+
+{{#ifgt pages 0}}
+<ul class="pagination">
+{{#ifet current 1}}
+<li class="disabled"><button type="btn" name="page" id="pageFirst" class="btnPage" onchange="pageSubmit()">First</button></li>
+{{else}}
+<li><button type="btn" name="page" id="pageFirst" value="1" class="btnPage" onchange="pageSubmit()">First</button></li>
+{{/ifet}}
+
+
+{{#iflet current 5}}
+{{#times 1 current pages}}
+<li><button type="btn" name="page" id="pagelet5" value="{{this}}" class="btnPage" onchange="pageSubmit()">{{this}}</button></li>
+{{#forCurrent 1 current}}
+<li class="active"><button type="btn" name="page" id="pagelet5" class="btnPage">{{this}}</button></li>
+{{/forCurrent}}
+{{/times}}
+{{#forCurrent3 1 current}}
+<li class="disabled"><a>...</a></li>
+{{/forCurrent3}}
+{{/iflet}}
+
+
+{{#ifgt current 5}}
+{{#ifnet current 1}}
+<li class="disabled"><a>...</a></li>
+{{/ifnet}}
+{{#forCurrent2 current current}}
+<li class="active"><button type="btn" name="page" id="pagegt5" class="btnPage">{{this}}</button></li>
+{{else}}
+{{#times2 current current pages}}
+<li><button type="btn" name="page" id="pagegt5" value="{{this}}" class="btnPage">{{this}}</button></li>
+{{/times2}}
+{{/forCurrent2}}
+{{/ifgt}}
+
+
+{{#ifet current pages}}
+<li class="disabled"><button type="btn" name="page" id="pageetcr">Last</button></li>
+{{else}}
+<li><button type="btn" name="page" id="pageetcr" value="{{pages}}" class="btnPage">Last</button></li>
+{{/ifet}}
+</ul>  
+{{/ifgt}}
+</form>
+</div>
+
+ <!--navigate number section end--> 
+ 
+ <!--image area start-->
+ 
+ {{# each woman_unstitched_lawn_vol_1s}}
+      <div class="photo"> 
+	   {{# each this}}
+<img src="{{this.imagePath}}"  alt="..." class="imagePath" id="imagePath"onmouseover ="this.src='{{imagePath2}}'" onmouseout="this.src='{{imagePath}}'"/>
+
+ <ul>
+ <li class="title">{{this.title}}</li>
+ <li class="price">PKR{{this.price}}</li>
+ </ul> 
+ <a href="#" class="btn2">Shop Now</a>
+ {{/each}}
+</div>
+ {{/each}}
+
+ <!--image area end-->
+
+ <!--navigate area bottom start-->
+ <div class="navigate2">
+   <form name="pageForm" action="http://localhost:3000/woman/lawn_vol_1" method="get">
+
+  {{#ifgt pages 0}}
+<ul class="pagination">
+{{#ifet current 1}}
+<li class="disabled"><button type="btn" name="page" id="pageFirst" value="1" class="btnPage" onchange="pageSubmit()">First</button></li>
+{{else}}
+<li><button type="btn" name="page" id="pageFirst" value="1" class="btnPage" onchange="pageSubmit()">First</button></li>
+{{/ifet}}
+
+
+{{#iflet current 5}}
+{{#times 1 current pages}}
+<li><button type="btn" name="page" id="pagelet5" value="{{this}}" class="btnPage" onchange="pageSubmit()">{{this}}</button></li>
+{{#forCurrent 1 current}}
+<li class="active"><button type="btn" name="page" id="pagelet5" class="btnPage">{{this}}</button></li>
+{{/forCurrent}}
+{{/times}}
+{{#forCurrent3 1 current}}
+<li class="disabled"><a>...</a></li>
+{{/forCurrent3}}
+{{/iflet}}
+
+
+{{#ifgt current 5}}
+{{#ifnet current 1}}
+<li class="disabled"><a>...</a></li>
+{{/ifnet}}
+{{#forCurrent2 current current}}
+<li class="active"><button type="btn" name="page" id="pagegt5" class="btnPage">{{this}}</button></li>
+{{else}}
+{{#times2 current current pages}}
+<li><button type="btn" name="page" id="pagegt5" value="{{this}}" class="btnPage">{{this}}</button></li>
+{{/times2}}
+{{/forCurrent2}}
+{{/ifgt}}
+
+
+{{#ifet current pages}}
+<li class="disabled"><button type="btn" name="page" id="pageetcr">Last</button></li>
+{{else}}
+<li><button type="btn" name="page" id="pageetcr" value="{{pages}}" class="btnPage">Last</button></li>
+{{/ifet}}
+</ul>  
+{{/ifgt}}
+
+</form>
+  </div>
+ 
+ <!--navigate number section end-->
+  
+ </div>
+
+ <!--section B end-->
+ 
+<div class="logo">
+ <a href="/"><img src="../images/favicon.ico"/></a>
+ </div>
+ 
+<!--Footer-->
+<footer id="main-footer" class="grid">
+<ul class="company">
+<li>COMPNAY</li>
+<li><div class="company-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div>
+ </li>
+</ul>
+
+<div id="line"></div>
+
+ <ul class="comp">
+ <li><a href="http://localhost:3000/home/about">About us </a></li>
+ <li><a href="http://localhost:3000/home/career">Careers at Classic</a></li>
+ <li><a href="http://localhost:3000/home/contact">Contact us</a></li>
+</ul> 
+
+
+<ul class="customer">
+<li>CUSTOMER SUPPORT</li>
+<li><div class="customer-icon">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div></li>
+</ul>
+
+<div id="line"></div>
+
+<ul class="cust">
+<li><a href="http://localhost:3000/home/customer">Customer Service </a></li>
+<li><a href="http://localhost:3000/home/storelocator">Store Locator </a></li>
+<li><a href="http://localhost:3000/home/handling">Shipping & Handling</a></li>
+<li><a href="http://localhost:3000/home/exchange">Return & Exchange</a></li>
+<li><a href="http://localhost:3000/home/disclaimer">Disclaimer</a></li>
+</ul>
+
+ 
+ <ul class="help">
+ <li>HELP</li>
+ <li><div class="help-icon">
+ <span></span>  
+ <span></span>
+ <span></span>
+ </div></li>
+ </ul>
+ 
+ <div id="line"></div>
+
+ <ul class="hel">
+<li><a href="http://www.tcscouriers.com/pk/Tracking/Default.aspx" target="_blank">Track Your Order </a></li>
+<li><a href="http://localhost:3000/home/term">Terms & Conditions</a></li>
+<li><a href="http://localhost:3000/home/privacy">Privacy Policy</a></li>
+
+</ul>
+
+
+</footer>
+<!--newsletter-->
+<div class="sign" class="grid">
+<p class="news">SIGN UP FOR OUR NEWSLETTER:</p>
+<form action="/#">
+
+<ul class="sin">
+<li class="si"><input type="text" name="signup" placeholder="Enter your email address:"/></li>
+<li class="si"><input type="submit" id="s" value="Sign Up"/></li>
+</ul>
+<hr>
+</form>
+</div>
+<!--advertisement-->
+<div class="adver" class="grid">
+<ul class="adv">
+    <li><a href="#"><i class="fab fa-facebook fa-2x"></i></a></li>
+	<li><a href="#"><i class="fab fa-twitter-square fa-2x"></i></a></li>
+	<li><a href="#"><i class="fab fa-google-plus fa-2x"></i></a></li>
+	<li><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
+	<li><a href="#"><i class="fab fa-linkedin fa-2x"></i></a></li>
+
+</ul>
+</div>
+<!--copyright-->
+<div class="copy" class="grid">
+<p>Copyright &copy 2018 Classic Fabrics.All Rights reserved.</p>
+</div>
+
+</body>
+
+
+</html>
