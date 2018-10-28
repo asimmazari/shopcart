@@ -18,23 +18,33 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-var options = document.getElementsByName("productPerPage");
-var val = sessionStorage.getItem('productPerPage');
+var value = sessionStorage.getItem('productPerPage');
+if(value == null || value == 8){
+$("#productPerPage").val('8');
+}
+if(value == 16){
+$("#productPerPage").val('16');
+}
+if(value == 32){
+$("#productPerPage").val('32');
+}
+$('#productPerPage').change(function(){
+var selectedOption = $('#productPerPage option:selected');
+//var val = selectedOption.val();
+//var tex = selectedOption.text();
+});
 
 $('select[name="productPerPage"]').click(function(){
 sessionStorage.setItem('productPerPage',$(this).val());
 
+}); 
 });
- }); 
-function productPerPageSubmit(){
-document.forms["productPerPageForm"].submit(); 
+function universalSubmit(){
+document.forms["xyzForm"].submit(); 
 }
-
 </script>
 
-
 <script type="text/javascript">
-
 $(document).ready(function(){
 var button = document.getElementsByName("page");
 var val = sessionStorage.getItem('page');
@@ -45,8 +55,8 @@ sessionStorage.setItem('page',$(this).val());
 });
 
 }); 
-function pageSubmit(){
-document.forms["pageForm"].submit(); 
+function universalSubmit(){
+document.forms["xyzForm"].submit(); 
 }
 </script>
 
@@ -1495,27 +1505,26 @@ document.forms["xyzForm"].submit();
   <!--filters section start-->
 
  <div class="filter"> 
+ <form name="xyzForm" action="http://localhost:3000/woman/lawn_vol_1" method="get">
 
  <ul class="filters">
  <li>FILTERS</li>
  </ul>
 
 <div class="selectdiv"> 
-  <form name="productPerPageForm" action="http://localhost:3000/woman/lawn_vol_1" method="get">
 
- <select name="productPerPage" id="productPerPage" onchange="productPerPageSubmit()">
-		<option></option>
+ <select name="productPerPage" id="productPerPage" onchange="universalSubmit()">
+		<option>       </option>
 		<option value="8">8</option>
          <option value="16">16</option>
 	    <option value="32">32</option>
    </select>
- </form>
+ 
    </div>
 
 <div class ="clearfix"></div>
 
  <ul class="filt">
-  <form name="xyzForm" action="http://localhost:3000/woman/lawn_vol_1" method="get">
 
  <li><ul id="nsb">
 <li>NOW SHOPPING BY</li>
@@ -2070,26 +2079,26 @@ document.forms["xyzForm"].submit();
 
 </ul>
 
-</form>
+
  </ul>  <!-- end div ul filt-->
+ <!--</form>-->
  </div> <!-- end div class filter-->
  
  <!--filter section end-->
  <div class="navigate1">
-  <form name="pageForm" action="http://localhost:3000/woman/lawn_vol_1" method="get">
 
 {{#ifgt pages 0}}
 <ul class="pagination">
 {{#ifet current 1}}
-<li class="disabled"><button type="btn" name="page" id="pageFirst" class="btnPage" onchange="pageSubmit()">First</button></li>
+<li class="disabled"><button type="btn" name="page" id="pageFirst" class="btnPage" onclick="universalSubmit()">First</button></li>
 {{else}}
-<li><button type="btn" name="page" id="pageFirst" value="1" class="btnPage" onchange="pageSubmit()">First</button></li>
+<li><button type="btn" name="page" id="pageFirst" value="1" class="btnPage" onclick="universalSubmit()">First</button></li>
 {{/ifet}}
 
 
 {{#iflet current 5}}
 {{#times 1 current pages}}
-<li><button type="btn" name="page" id="pagelet5" value="{{this}}" class="btnPage" onchange="pageSubmit()">{{this}}</button></li>
+<li><button type="btn" name="page" id="pagelet5" value="{{this}}" class="btnPage" onclick="universalSubmit()">{{this}}</button></li>
 {{#forCurrent 1 current}}
 <li class="active"><button type="btn" name="page" id="pagelet5" class="btnPage">{{this}}</button></li>
 {{/forCurrent}}
@@ -2113,7 +2122,6 @@ document.forms["xyzForm"].submit();
 {{/forCurrent2}}
 {{/ifgt}}
 
-
 {{#ifet current pages}}
 <li class="disabled"><button type="btn" name="page" id="pageetcr">Last</button></li>
 {{else}}
@@ -2121,7 +2129,7 @@ document.forms["xyzForm"].submit();
 {{/ifet}}
 </ul>  
 {{/ifgt}}
-</form>
+
 </div>
 
  <!--navigate number section end--> 
@@ -2146,7 +2154,6 @@ document.forms["xyzForm"].submit();
 
  <!--navigate area bottom start-->
  <div class="navigate2">
-   <form name="pageForm" action="http://localhost:3000/woman/lawn_vol_1" method="get">
 
   {{#ifgt pages 0}}
 <ul class="pagination">
@@ -2192,11 +2199,11 @@ document.forms["xyzForm"].submit();
 </ul>  
 {{/ifgt}}
 
-</form>
+
   </div>
  
  <!--navigate number section end-->
-  
+  </form>
  </div>
 
  <!--section B end-->
